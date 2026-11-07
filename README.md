@@ -37,7 +37,7 @@ La fuente de verdad es el array `projects` de `src/components/Projects.jsx`.
 ## Estructura del proyecto
 
 ```
-Proyect-2/
+Portfolio/
 ├── public/                     # Servido tal cual
 │   ├── pdf/                    # Hoja de vida descargable
 │   ├── ai-catalog.json
@@ -68,8 +68,8 @@ Proyect-2/
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/MaicolAvila00/Proyect-.git
-cd Proyect-
+git clone https://github.com/MaicolAvila00/Portfolio.git
+cd Portfolio
 
 # 2. Instalar dependencias
 npm install
