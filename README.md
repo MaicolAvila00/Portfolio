@@ -55,17 +55,10 @@ Proyect-2/
 │   ├── App.jsx
 │   ├── main.jsx                # Punto de entrada
 │   └── index.css               # Única hoja de estilos
-├── design/                     # Design system y mockups (no se despliega)
-│   ├── system.md
-│   ├── system.html
-│   └── tecnologico/
-│       ├── tecnologico.html
-│       └── design.json
 ├── index.html
 ├── vite.config.js
 ├── eslint.config.js
 ├── CHANGELOG.md                # Historial de versiones
-├── agents.md                   # Guía de trabajo para agentes
 └── package.json
 ```
 
@@ -106,7 +99,7 @@ El proyecto se despliega en **Vercel** conectando el repositorio de GitHub. Verc
 - **Habilidades y presentación:** modifica los grupos y textos en `src/components/Skills.jsx` y `src/AboutMe.jsx`.
 - **Contacto:** actualiza email, teléfono y enlaces en `src/components/Contact.jsx`.
 - **CV:** reemplaza `public/pdf/Curriculum Maicol Avila.pdf`; si cambia el nombre, actualiza el `href` del enlace de descarga en `Contact.jsx`.
-- **Estilos:** el diseño vive en `src/index.css`; los tokens están en `:root` y se documentan en `design/system.md`.
+- **Estilos:** el diseño vive en `src/index.css`; los tokens están en `:root`.
 
 
 ## Autor

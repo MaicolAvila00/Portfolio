@@ -1,11 +1,10 @@
 /* ============================================================
    INDEX.CSS — Hoja de estilos única del portfolio
-   Diseño 02-tecnologico: fondo oscuro, acento cian neón,
+   Diseño tecnológico: fondo oscuro, acento cian neón,
    tipografía system-ui, datos técnicos en monospace.
-   Basado en design/bento-mosaico/02-tecnologico.html
    ============================================================ */
 
-/* --- Tokens de diseño (02-tecnologico) --- */
+/* --- Tokens de diseño (tecnológico) --- */
 :root {
   --bg: #0A0F1C;
   --surface: #121A2B;
@@ -93,7 +92,7 @@ p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 14px; }
 .important { color: var(--secondary); font-weight: 800; }
 .important.accent { color: var(--accent); font-weight: 800; }
 
-/* --- Grid tecnológico principal (02-tecnologico) --- */
+/* --- Grid tecnológico principal --- */
 .tech-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

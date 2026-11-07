@@ -2,6 +2,12 @@
 
 Todas las versiones notables de este proyecto. El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 
+## [0.1.1] - 2026-11-07
+
+### Removed
+- `design/` (design system y mockups), `.opencode/` (configuración de agentes) y `agents.md`. El repositorio queda solo con el código del sitio, la documentación y la configuración de build.
+- Referencias a esos directorios en `README.md` y en el comentario de cabecera de `src/index.css`.
+
 ## [0.1.0] - 2026-11-07
 
 ### Added
