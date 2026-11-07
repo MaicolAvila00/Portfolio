@@ -2,6 +2,26 @@
 
 Todas las versiones notables de este proyecto. El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 
+## [0.2.0] - 2026-11-07
+
+### Added
+- CTA en el Hero: "Ver proyectos" (ancla a `#proyectos`) y "Descargar CV" (`btn btn-ghost`).
+- Campos `description` y `demo` en el array `projects`; el componente los renderiza solo cuando tienen valor. Los datos quedan vacíos para completar.
+
+### Changed
+- Orden del grid bento: los proyectos pasan a la fila 1 a ancho completo; perfil y stack bajan a las filas 2-3.
+- `Hero.jsx`: se quitó "Especializado en" y la sigla críptica "DEV · NETS · JS"; ahora declara rol, stack y despliegue.
+- `Skills.jsx`: de 7 grupos y 26 ítems a 4 grupos más dos líneas de cierre ("También he trabajado con", "Soporte de TI").
+- `AboutMe.jsx`: badge `Full Stack Junior`, segundo párrafo reescrito y disponibilidad explícita como etapa productiva (prácticas).
+- La card de Skills ya no scrollea en desktop (se eliminaron `max-height` y `overflow-y`).
+- El enlace de proyecto pasa de "Ver detalles" a "Código", que es lo que realmente abre.
+
+### Fixed
+- `Inglés intermedio (A2)` → `Inglés básico (A2)`: A2 es básico en el marco CEFR, no intermedio.
+- El footer tenía `2024` fijo; ahora usa `new Date().getFullYear()`.
+- `Interfaces graficas` → `Interfaces gráficas con Java Swing`.
+- Chips normalizados (`Next.JS` → `Next.js`, `ESLint+Node` → `ESLint + Node`) y se quitó "Agentes IA", que no describe tecnología.
+
 ## [0.1.1] - 2026-11-07
 
 ### Removed

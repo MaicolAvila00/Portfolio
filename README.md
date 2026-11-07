@@ -95,7 +95,7 @@ El proyecto se despliega en **Vercel** conectando el repositorio de GitHub. Verc
 
 ## Cómo personalizarlo
 
-- **Proyectos:** edita el array `projects` en `src/components/Projects.jsx` (`title`, `tech[]`, `link`). `title` debe ser único porque se usa como `key` y como texto de la miniatura.
+- **Proyectos:** edita el array `projects` en `src/components/Projects.jsx` (`title`, `description`, `demo`, `tech[]`, `link`). `title` debe ser único porque se usa como `key` y como texto de la miniatura; `description` y `demo` son opcionales y no se renderizan si quedan vacíos.
 - **Habilidades y presentación:** modifica los grupos y textos en `src/components/Skills.jsx` y `src/AboutMe.jsx`.
 - **Contacto:** actualiza email, teléfono y enlaces en `src/components/Contact.jsx`.
 - **CV:** reemplaza `public/pdf/Curriculum Maicol Avila.pdf`; si cambia el nombre, actualiza el `href` del enlace de descarga en `Contact.jsx`.

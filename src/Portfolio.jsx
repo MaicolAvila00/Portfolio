@@ -17,7 +17,7 @@ const Portfolio = () => {
         <article className="skills">
           <Skills />
         </article>
-        <article className="projects">
+        <article className="projects" id="proyectos">
           <Projects />
         </article>
         <article className="contact contact-card">

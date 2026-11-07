@@ -1,7 +1,9 @@
 const Footer = () => {
+  const year = new Date().getFullYear();
+
   return (
     <footer className="footer-card">
-      &copy; 2024 Maicol Avila. Todos los derechos reservados.
+      &copy; {year} Maicol Avila. Todos los derechos reservados.
     </footer>
   );
 };
