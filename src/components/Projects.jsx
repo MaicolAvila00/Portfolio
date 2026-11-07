@@ -2,7 +2,7 @@ const projects = [
   {
     title: 'Sistema de Login Full Stack',
     tech: ['React', 'Vite', 'Node.js', 'Express', 'SQLite'],
-    link: 'https://loggin-usuarios.vercel.app/login'
+    link: 'https://github.com/MaicolAvila00/LoginProyect'
   },
   {
     title: 'Interfaces graficas Java Swing',
