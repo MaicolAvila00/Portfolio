@@ -13,7 +13,7 @@ const AboutMe = () => {
         React y Vite. Me interesa el desarrollo web de punta a punta: interfaz, API y base de datos.
       </p>
       <div className="quick-data">
-        <p><span className="important">Buscando:</span> etapa productiva (prácticas) como Desarrollador Junior.</p>
+        <p><span className="important">Buscando:</span> etapa productiva (prácticas) como Desarrollador Junior o afines.</p>
         <p><span className="important">Disponibilidad:</span> inmediata, presencial o híbrida en Bogotá.</p>
         <p><span className="important">Idiomas:</span> Español nativo · Inglés básico (A2)</p>
       </div>
