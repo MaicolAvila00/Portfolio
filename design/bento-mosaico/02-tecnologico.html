@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tecnológico — Portfolio Maicol Avila</title>
+<style>
+  /* Estilo tecnológico: fondo muy oscuro, acento cian neón para destacar,
+     tipografía jerárquica (sans para lectura, mono para datos técnicos),
+     bordes definidos. Tokens desde design/system.md. Sin URLs externas. */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0A0F1C;
+    --surface: #121A2B;
+    --surface-hover: #172136;
+    --text: #FFFFFF;
+    --text-dim: #CBD5E1;
+    --text-muted: #64748B;
+    --primary: #2D7D87;
+    --secondary: #00E5FF;
+    --accent: #FD79A8;
+    --radius: 10px;
+    --radius-sm: 6px;
+    --border: rgba(0, 229, 255, 0.35);
+    --shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+    --gap: 24px;
+  }
+  body {
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+    padding: 40px;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+
+  /* Hero superior */
+  header { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 44px; }
+  .hero-top { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  header h1 { font-size: 2.6rem; letter-spacing: -0.5px; font-weight: 800; line-height: 1.1; }
+  .tag {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
+    background: var(--surface); color: var(--secondary);
+    padding: 6px 12px; border-radius: var(--radius-sm);
+    border: 1px solid var(--border); font-weight: 700;
+  }
+  .hero-sub { font-size: 1.15rem; color: var(--text-dim); max-width: 620px; }
+  .hero-sub .important { color: var(--secondary); font-weight: 800; }
+
+  /* Jerarquía tipográfica */
+  h2 { font-size: 1.4rem; margin-bottom: 16px; color: var(--secondary); border-bottom: 2px solid var(--border); padding-bottom: 8px; display: inline-block; letter-spacing: -0.2px; }
+  h3 { font-size: 1.05rem; margin-bottom: 10px; color: var(--text); font-weight: 700; }
+  p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 14px; }
+  .lead { font-size: 1.05rem; color: var(--text); font-weight: 500; }
+
+  /* Datos importantes destacados */
+  .important { color: var(--secondary); font-weight: 800; }
+  .important.accent { color: var(--accent); font-weight: 800; }
+
+  /* Grid tecnológico principal */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 260px;
+    gap: var(--gap);
+  }
+  .tech-grid > article {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .tech-grid > article::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--secondary), var(--primary));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .tech-grid > article:hover {
+    border-color: var(--secondary);
+    box-shadow: var(--shadow);
+    transform: translateY(-5px);
+  }
+  .tech-grid > article:hover::before { opacity: 1; }
+
+  /* Ubicación de bloques */
+  .about { grid-column: 1 / span 2; grid-row: 1 / span 2; }
+  .skills { grid-column: 3 / span 2; grid-row: 1 / span 2; }
+  .projects { grid-column: 1 / span 4; grid-row: 3 / span 2; }
+  .contact { grid-column: 1 / span 2; grid-row: 5 / span 1; }
+  .footer { grid-column: 3 / span 2; grid-row: 5 / span 1; }
+
+  .about-avatar {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    margin-bottom: 18px; display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 900; font-size: 1.4rem;
+    box-shadow: 0 8px 20px rgba(45, 125, 135, 0.45);
+  }
+  .about p { margin-bottom: 0; }
+
+  /* Badge de rol */
+  .role-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(45, 125, 135, 0.12);
+    color: var(--secondary);
+    padding: 6px 14px; border-radius: 24px;
+    font-size: 0.8rem; font-weight: 800;
+    border: 1px solid rgba(45, 125, 135, 0.35);
+    margin-bottom: 14px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  /* Datos de contacto rápidos en sobre mí */
+  .quick-data { margin-top: 14px; font-size: 0.85rem; color: var(--text-muted); }
+  .quick-data .important { color: var(--secondary); }
+
+  /* Habilidades agrupadas */
+  .skill-group { margin-bottom: 14px; }
+  .skill-group h4 { font-size: 0.85rem; color: var(--secondary); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+  .skill-list { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .skill-list li {
+    background: rgba(0, 229, 255, 0.07);
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-weight: 600;
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  }
+  .skill-list li:hover {
+    background: rgba(0, 229, 255, 0.18);
+    border-color: var(--secondary);
+    transform: translateX(4px);
+  }
+
+  /* Proyectos */
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+  }
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex; flex-direction: column;
+  }
+  .project-card:hover { transform: translateY(-4px); border-color: var(--secondary); }
+  .project-thumb {
+    height: 140px;
+    background: linear-gradient(135deg, var(--primary), var(--surface));
+    display: flex; align-items: center; justify-content: center;
+    color: var(--secondary); font-weight: 800; font-size: 0.85rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .project-body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+  .project-title { font-size: 1.05rem; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+  .project-tech {
+    display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px;
+  }
+  .project-tech span {
+    background: rgba(0, 229, 255, 0.08);
+    color: var(--secondary);
+    padding: 3px 8px; border-radius: 4px;
+    font-size: 0.7rem; font-weight: 700;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    border: 1px solid rgba(0, 229, 255, 0.18);
+  }
+  .project-link {
+    color: var(--secondary); text-decoration: none; font-size: 0.8rem; font-weight: 800;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    border-bottom: 1px solid transparent; transition: border-color 0.3s ease;
+    margin-top: auto;
+  }
+  .project-link:hover { border-bottom-color: var(--secondary); }
+
+  /* Contacto */
+  .contact-card { text-align: center; }
+  .email-chip {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: #050810; padding: 16px 26px;
+    border-radius: 32px; font-weight: 900; font-size: 1.1rem; margin-bottom: 12px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    box-shadow: 0 12px 28px rgba(253, 121, 168, 0.5);
+  }
+  .tel-chip {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: #050810; padding: 12px 22px;
+    border-radius: 30px; font-weight: 800; font-size: 1rem; margin-bottom: 16px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    box-shadow: 0 10px 24px rgba(253, 121, 168, 0.45);
+    border: 1px solid rgba(253, 121, 168, 0.3);
+  }
+  .contact-card p { margin-bottom: 14px; }
+  .btn {
+    background: var(--accent); color: #050810; border: none; padding: 16px 30px;
+    border-radius: 32px; font-family: inherit; font-weight: 900; cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 24px rgba(253, 121, 168, 0.4);
+  }
+  .btn:hover { background: #fd9ec2; transform: translateY(-3px); box-shadow: 0 16px 32px rgba(253, 121, 168, 0.55); }
+  .btn:active { transform: translateY(-1px); }
+  .socials { margin-top: 18px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .socials a {
+    color: var(--text-muted); text-decoration: none; font-size: 1rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-weight: 700;
+  }
+  .socials a:hover { color: var(--secondary); transform: translateY(-2px); }
+
+  /* Footer */
+  .footer-card { text-align: center; color: var(--text-muted); font-size: 0.8rem; padding-top: 14px; border-top: 1px solid var(--border); letter-spacing: 0.05em; }
+
+  /* Responsive: stack en móvil */
+  @media (max-width: 768px) {
+    .tech-grid {
+      grid-template-columns: 1fr;
+      grid-auto-rows: auto;
+    }
+    .tech-grid > article { grid-column: 1; grid-row: auto; }
+    header { align-items: flex-start; gap: 10px; }
+    header h1 { font-size: 2rem; }
+    .about { grid-column: 1; grid-row: auto; }
+    .skills { grid-column: 1; grid-row: auto; }
+    .projects { grid-column: 1; grid-row: auto; }
+    .contact { grid-column: 1; grid-row: auto; }
+    .footer { grid-column: 1; grid-row: auto; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    .tech-grid > article:hover { transform: none; }
+    .skill-list li:hover { transform: none; }
+    .socials a:hover { transform: none; }
+  }
+
+  .btn:focus-visible, a:focus-visible, .skill-list li:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 3px;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Hero -->
+    <header>
+      <div class="hero-top">
+        <h1>Maicol Avila</h1>
+        <span class="tag">DEV · NETS · JS</span>
+      </div>
+      <p class="hero-sub"><span class="important">Desarrollador Junior Full Stack</span> · Bogotá · Especializado en <span class="important">interfaces web</span>, <span class="important">redes</span> y <span class="important">sistemas operativos</span>. Construyo productos digitales con foco en rendimiento, accesibilidad y código mantenible.</p>
+    </header>
+
+    <div class="tech-grid">
+      <!-- Sobre mí / Perfil profesional -->
+      <article class="about">
+        <div class="about-avatar">MA</div>
+        <div class="role-badge">Full Stack · Soporte TI</div>
+        <h2>Perfil profesional</h2>
+        <p class="lead">Estudiante de Ingeniería de Sistemas (4.º semestre, Universidad La CUN) y Técnico Laboral en Auxiliar en Asistencia y Soporte de TI (Universitaria de Colombia).</p>
+        <p>Busco etapa productiva como Desarrollador Junior o Analista de Soporte. He construido aplicaciones web y móviles de punta a punta, incluyendo una app full stack con React, API REST en Node.js/Express y SQLite, desplegada en Vercel y Render, y una app Android con autenticación en Firebase.</p>
+        <div class="quick-data">
+          <p><span class="important">Disponibilidad:</span> Inmediata para etapa productiva presencial o híbrida en Bogotá.</p>
+          <p><span class="important">Idiomas:</span> Español nativo · Inglés intermedio (B1)</p>
+        </div>
+      </article>
+
+      <!-- Stack técnico -->
+      <article class="skills">
+        <h2>Stack técnico</h2>
+        <div class="skill-group">
+          <h4>Lenguajes principales</h4>
+          <ul class="skill-list">
+            <li>Java</li><li>JavaScript</li><li>PHP</li><li>SQL</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Web</h4>
+          <ul class="skill-list">
+            <li>HTML5</li><li>CSS3</li><li>React</li><li>Node.js/Express</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Bases de datos</h4>
+          <ul class="skill-list">
+            <li>MySQL</li><li>SQLite</li><li>Oracle</li><li>Firebase</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Móvil</h4>
+          <ul class="skill-list">
+            <li>Android Studio</li><li>Java + XML</li><li>Firebase Auth</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Despliegue y herramientas</h4>
+          <ul class="skill-list">
+            <li>Git / GitHub</li><li>Vercel</li><li>Render</li><li>Scrum básico</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Soporte de TI</h4>
+          <ul class="skill-list">
+            <li>Redes</li><li>Windows</li><li>Linux</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Conocimientos básicos</h4>
+          <ul class="skill-list">
+            <li>C#/.NET</li><li>Python</li><li>C++</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Proyectos -->
+      <article class="projects">
+        <h2>Proyectos destacados</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <div class="project-thumb">LOGIN FULL STACK</div>
+            <div class="project-body">
+              <div class="project-title">Sistema de Login Full Stack</div>
+              <div class="project-tech">
+                <span>React</span><span>Vite</span><span>Node.js</span><span>Express</span><span>SQLite</span>
+              </div>
+              <a class="project-link" href="https://github.com/MaicolAvila00/LoginProyect" target="_blank" rel="noopener noreferrer">Demo · GitHub &rarr;</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-thumb">APP ANDROID</div>
+            <div class="project-body">
+              <div class="project-title">App Android Login</div>
+              <div class="project-tech">
+                <span>Java</span><span>XML</span><span>Firebase</span>
+              </div>
+              <a class="project-link" href="#" target="_blank" rel="noopener noreferrer">Ver detalles &rarr;</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-thumb">ANIMALANDIA</div>
+            <div class="project-body">
+              <div class="project-title">Web de Mascotas — Animalandia</div>
+              <div class="project-tech">
+                <span>HTML</span><span>CSS</span><span>PHP</span>
+              </div>
+              <a class="project-link" href="#" target="_blank" rel="noopener noreferrer">Ver detalles &rarr;</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-thumb">GESTIÓN ACADÉMICA</div>
+            <div class="project-body">
+              <div class="project-title">Gestión Académica — Estructuras de Datos</div>
+              <div class="project-tech">
+                <span>Java</span><span>Swing</span><span>NetBeans</span>
+              </div>
+              <a class="project-link" href="#" target="_blank" rel="noopener noreferrer">Ver detalles &rarr;</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-thumb">SISTEMA DE CITAS</div>
+            <div class="project-body">
+              <div class="project-title">Sistema de Citas</div>
+              <div class="project-tech">
+                <span>C++</span>
+              </div>
+              <a class="project-link" href="#" target="_blank" rel="noopener noreferrer">Ver detalles &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Contacto -->
+      <article class="contact contact-card">
+        <h2>Contacto</h2>
+        <div class="email-chip">✉ maicol4vila00@gmail.com</div>
+        <div class="tel-chip">📞 304 308 9701</div>
+        <p class="important accent">¿Tenés un proyecto o querés charlar de tecnología? Escribime y coordinamos.</p>
+        <button class="btn">Copiar correo</button>
+        <div class="socials">
+          <a href="https://linkedin.com/in/maicol-avila-032503210" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/MaicolAvila00" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </article>
+
+      <!-- Footer -->
+      <article class="footer footer-card">
+        &copy; 2024 Maicol Avila. Todos los derechos reservados.
+      </article>
+    </div>
+  </div>
+</body>
+</html>

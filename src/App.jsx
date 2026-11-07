@@ -1,4 +1,3 @@
-import React from 'react';
 import Portfolio from './Portfolio.jsx';
 import './App.css';
 

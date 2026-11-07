@@ -1,0 +1,28 @@
+# Maicol Avila — Portafolio
+> Portafolio profesional de Maicol Avila, Desarrollador Junior Full Stack basado en Bogotá, Colombia. Estudiante de Ingeniería de Sistemas (4.º semestre, Universidad La CUN) y Técnico Laboral en Auxiliar en Asistencia y Soporte de TI (Universitaria de Colombia).
+
+## Habilidades principales
+
+- Lenguajes: Java, JavaScript, PHP, SQL
+- Web: HTML5, CSS3, React, Node.js/Express
+- Bases de datos: MySQL, SQLite, Oracle, Firebase
+- Móvil: Android Studio (Java + XML), Firebase Authentication
+- Despliegue: Git/GitHub, Vercel, Render
+- Soporte de TI: Redes, Windows, Linux
+
+## Proyectos destacados
+
+- Sistema de Login Full Stack: React, Vite, Node.js, Express, SQLite — Desplegado en Vercel y Render
+- App Android Login: Java, XML, Firebase Authentication
+- Web de Mascotas — Animalandia: HTML, CSS, PHP
+- Gestión Académica — Estructuras de Datos: Java, Swing, NetBeans
+- Sistema de Citas: C++
+
+## Contacto
+
+- Email: maicol4vila00@gmail.com
+- Teléfono: 304 308 9701
+- LinkedIn: https://linkedin.com/in/maicol-avila-032503210
+- GitHub: https://github.com/MaicolAvila00
+
+Disponibilidad inmediata para etapa productiva presencial o híbrida en Bogotá.

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Design System — Portfolio</title>
+<style>
+  /* Sistema de diseño sincronizado desde src/index.css. Sin URLs externas. */
+  :root {
+    --primary-color: #2D7D87;
+    --secondary-color: #00CEC9;
+    --accent-color: #FD79A8;
+    --background-color: #2E565C;
+    --text-color: #2D3436;
+    --card-background: #323B3C;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--background-color);
+    padding: 40px;
+    font-size: 16px;
+  }
+  h1 { font-size: 2.5rem; margin-bottom: 8px; color: var(--text-color); }
+  h2 { font-size: 1.75rem; margin: 32px 0 12px; color: var(--text-color); border-bottom: 3px solid var(--secondary-color); display: inline-block; padding-bottom: 6px; }
+  p { margin-bottom: 16px; color: var(--text-color); max-width: 640px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 20px; }
+  .swatch { height: 96px; border-radius: 12px; display: flex; align-items: flex-end; justify-content: center; color: #fff; font-weight: 700; padding-bottom: 12px; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+  .swatch-primary { background: var(--primary-color); }
+  .swatch-secondary { background: var(--secondary-color); }
+  .swatch-accent { background: var(--accent-color); color: #fff; }
+  .swatch-bg { background: var(--background-color); color: #fff; }
+  .swatch-text { background: #fff; color: var(--text-color); }
+  .swatch-card { background: var(--card-background); color: #fff; }
+  .token { margin-top: 6px; font-size: 0.85rem; color: var(--text-color); font-family: ui-monospace, SFMono-Regular, monospace; }
+  .type-scale { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 24px; }
+  .type-item h3 { margin-bottom: 4px; color: var(--text-color); }
+  .type-item p { margin: 0; color: var(--text-color); opacity: 0.9; }
+  .radius-demo { width: 80px; height: 80px; border-radius: var(--r, 8px); background: var(--secondary-color); margin: 8px 0; display: inline-block; vertical-align: top; }
+  .shadow-demo { width: 140px; height: 90px; border-radius: 12px; background: var(--card-background); box-shadow: 0 10px 20px rgba(0,0,0,0.15); margin: 12px 0; display: inline-block; vertical-align: top; }
+  .btn { background: var(--accent-color); color: #fff; border: none; padding: 10px 20px; border-radius: 25px; font-family: inherit; font-weight: 600; cursor: pointer; }
+  .btn:hover { background: #00E1FF; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+  <h1>Design System — Portfolio</h1>
+  <p>Tokens sincronizados desde <code>src/index.css</code>. Este artboard sirve de referencia visual para todas las direcciones de diseño.</p>
+
+  <h2>Colores</h2>
+  <div class="grid">
+    <div class="swatch swatch-primary">#2D7D87 — primary</div>
+    <div class="token">--primary-color: header, footer</div>
+    <div class="swatch swatch-secondary">#00CEC9 — secondary</div>
+    <div class="token">--secondary-color: acentos, hover, bordes</div>
+    <div class="swatch swatch-accent">#FD79A8 — accent</div>
+    <div class="token">--accent-color: botones, CTAs</div>
+    <div class="swatch swatch-bg">#2E565C — background</div>
+    <div class="token">--background-color: fondo general</div>
+    <div class="swatch swatch-text">#2D3436 — text</div>
+    <div class="token">--text-color: texto principal</div>
+    <div class="swatch swatch-card">#323B3C — card</div>
+    <div class="token">--card-background: secciones y cards</div>
+  </div>
+
+  <h2>Tipografía</h2>
+  <div class="type-scale">
+    <div class="type-item">
+      <h3>H1 — 2.5rem</h3>
+      <p>Título principal del sistema</p>
+    </div>
+    <div class="type-item">
+      <h3>H2 — 1.75rem</h3>
+      <p>Títulos de sección con borde inferior</p>
+    </div>
+    <div class="type-item">
+      <p style="font-size:1rem;">Cuerpo — 1rem, línea 1.6, fuente 'Poppins', sans-serif</p>
+    </div>
+  </div>
+
+  <h2>Radios</h2>
+  <div class="radius-demo" style="--r: 8px;"></div>
+  <div style="font-size:0.85rem; margin-bottom:8px;">8px — inputs, imágenes</div>
+  <div class="radius-demo" style="--r: 12px;"></div>
+  <div style="font-size:0.85rem; margin-bottom:8px;">12px — tarjetas internas</div>
+  <div class="radius-demo" style="--r: 15px;"></div>
+  <div style="font-size:0.85rem; margin-bottom:8px;">15px — secciones, footer</div>
+  <div class="radius-demo" style="--r: 25px;"></div>
+  <div style="font-size:0.85rem;">25px — chips, botones</div>
+
+  <h2>Sombras</h2>
+  <div class="shadow-demo"></div>
+  <div style="font-size:0.85rem;">0 10px 20px rgba(0,0,0,0.15) — tarjetas elevadas</div>
+
+  <h2>Botón de acento</h2>
+  <button class="btn">Botón CTA</button>
+
+  <p style="margin-top:40px; font-size:0.85rem; opacity:0.7;">Sin URLs externas, sin CDNs, solo system fonts y tokens del proyecto.</p>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "title": "Bento Mosaico — Portfolio Maicol Avila",
+  "brief": "Rediseño visual del portafolio usando un layout bento (tarjetas de distinto tamaño en mosaico), fondo claro, acento teal sutil y mucho aire entre bloques.",
+  "feature": null,
+  "artboards": [
+    {
+      "file": "01-bento-mosaico.html",
+      "title": "Bento Mosaico",
+      "tradeoff": "Muy visual y moderno; requiere más espacio horizontal que una columna única",
+      "width": 1100,
+      "height": 900
+    },
+    {
+      "file": "02-tecnologico.html",
+      "title": "Tecnológico",
+      "tradeoff": "Estilo oscuro con acento neón cán, hero superior, perfil profesional, stack técnico agrupado, 5 proyectos con tecnologías, contacto con email/teléfono/redes y disponibilidad",
+      "width": 1200,
+      "height": 950
+    }
+  ]
+}
