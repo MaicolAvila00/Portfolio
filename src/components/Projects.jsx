@@ -1,29 +1,29 @@
 const projects = [
   {
     title: 'Sistema de Login Full Stack',
-    description: '',
-    demo: '',
+    description: 'Aplicación full stack para autenticación y gestión de usuarios. Frontend con React + Vite, backend Node.js/Express y base de datos SQLite. Desplegado en Vercel con API REST y control de sesiones.',
+    demo: 'https://loggin-usuarios.vercel.app/login',
     tech: ['React', 'Vite', 'Node.js', 'Express', 'SQLite'],
     link: 'https://github.com/MaicolAvila00/LoginProyect'
   },
   {
     title: 'Interfaces gráficas con Java Swing',
-    description: '',
+    description: 'Aplicación de escritorio en Java para gestión de interfaces gráficas usando Swing y NetBeans. Práctica de programación orientada a objetos y manejo de eventos en entorno desktop."',
     demo: '',
     tech: ['Java', 'Swing', 'NetBeans'],
     link: 'https://github.com/MaicolAvila00/Interfaces---Logica'
   },
   {
     title: 'Web BikePark',
-    description: '',
-    demo: '',
+    description: 'Sitio web institucional con Next.js y React 18, estilos modulares y configuración ESLint + Node. Proyecto para practicar renderizado y optimización de assets.',
+    demo: 'https://bikepark-website.vercel.app',
     tech: ['Next.js', 'CSS modular', 'React 18', 'ESLint + Node'],
     link: 'https://github.com/MaicolAvila00/bikepark-website-deploy'
   },
   {
     title: 'Gestión lista de personas',
-    description: '',
-    demo: '',
+    description: 'Interfaz web para lista de_contacto usando React y TypeScript. Consumo de datos locales y despliegue en Vercel. Práctica de componentes funcionales y TypeScript tipado.',
+    demo: 'https://types-odrnfmp6x-maicol-avilas-projects.vercel.app',
     tech: ['React', 'TypeScript', 'Vite'],
     link: 'https://github.com/MaicolAvila00/ListCards'
   }
