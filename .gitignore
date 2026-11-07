@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Herramientas de IA — solo local, nunca se versionan
+.agents/
+.atl/
+.opencode/
+agents.md

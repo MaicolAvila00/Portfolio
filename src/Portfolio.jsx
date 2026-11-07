@@ -1,40 +1,34 @@
+import Hero from './components/Hero';
 import AboutMe from './AboutMe';
-import Projects from './Projects';
-import Contact from './Contact';
-import './index.css';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 const Portfolio = () => {
   return (
-    <div className="portfolio">
-      <header>
-        <h1>Portfolio Michael Avila</h1>
-        <nav>
-          <ul>
-            <li><a href="#about">AboutMe</a></li>
-            <li><a href="#projects">Proyects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-      <main>
-        <section id="about">
+    <div className="wrap">
+      <Hero />
+
+      <div className="tech-grid">
+        <article className="about">
           <AboutMe />
-        </section>
-        <section id="projects">
+        </article>
+        <article className="skills">
+          <Skills />
+        </article>
+        <article className="projects" id="proyectos">
           <Projects />
-        </section>
-        <section id="contact">
+        </article>
+        <article className="contact contact-card">
           <Contact />
-        </section>
-      </main>
-      <footer>
-        <p>&copy; 2024 My Portfoil. Todos los derechos reservados.</p>
-      </footer>
+        </article>
+        <article className="footer">
+          <Footer />
+        </article>
+      </div>
     </div>
   );
 };
-
-
-
 
 export default Portfolio;

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://agenticresourcediscovery.org/schema/ai-catalog.json",
+  "name": "Maicol Avila Portfolio",
+  "description": "Portafolio profesional de Maicol Avila, Desarrollador Junior Full Stack basado en Bogotá, Colombia.",
+  "version": "1.0.0",
+  "schema": "https://agenticresourcediscovery.org/spec/",
+  "owner": {
+    "name": "Maicol Avila",
+    "email": "maicol4vila00@gmail.com",
+    "website": "https://github.com/MaicolAvila00"
+  },
+  "capabilities": [
+    "web-development",
+    "full-stack",
+    "mobile-development",
+    "it-support"
+  ],
+  "technologies": [
+    "React",
+    "Node.js",
+    "Express",
+    "Java",
+    "JavaScript",
+    "PHP",
+    "SQL",
+    "MySQL",
+    "SQLite",
+    "Oracle",
+    "Firebase",
+    "Android Studio",
+    "Git",
+    "Vercel",
+    "Render"
+  ],
+  "projects": [
+    {
+      "name": "Sistema de Login Full Stack",
+      "description": "Frontend en React que consume una API REST propia con registro e inicio de sesión de usuarios y persistencia en SQLite. Desplegado con Vercel (interfaz) y Render (API).",
+      "url": "https://github.com/MaicolAvila00/LoginProyect",
+      "technologies": ["React", "Vite", "Node.js", "Express", "SQLite"]
+    },
+    {
+      "name": "App Android Login",
+      "description": "Interfaz en XML y lógica en Java, con registro e inicio de sesión mediante Firebase Authentication y almacenamiento de datos en tiempo real.",
+      "url": "#",
+      "technologies": ["Java", "XML", "Firebase"]
+    },
+    {
+      "name": "Animalandia — Web de Mascotas",
+      "description": "Sitio con front-end en HTML/CSS y back-end en PHP donde los usuarios consultan precios de comida, snacks y servicios de baño para mascotas.",
+      "url": "#",
+      "technologies": ["HTML", "CSS", "PHP"]
+    },
+    {
+      "name": "Gestión Académica — Estructuras de Datos",
+      "description": "Aplicación de 4 módulos en NetBeans que aplica ArrayList, Pila, Cola y HashSet para altas/bajas de estudiantes, deshacer acciones, fila de banco y registro de asistentes sin duplicados.",
+      "url": "#",
+      "technologies": ["Java", "Swing", "NetBeans"]
+    },
+    {
+      "name": "Sistema de Citas",
+      "description": "Formularios para solicitar y visualizar citas, con gestión de solicitudes y manejo seguro de la información.",
+      "url": "#",
+      "technologies": ["C++"]
+    }
+  ],
+  "contact": {
+    "email": "maicol4vila00@gmail.com",
+    "phone": "304 308 9701",
+    "linkedin": "https://www.linkedin.com/in/maicol%C3%A1vila-developer-junior/",
+    "github": "https://github.com/MaicolAvila00"
+  },
+  "location": "Bogotá, Colombia",
+  "availability": "Inmediata para etapa productiva presencial o híbrida"
+}
