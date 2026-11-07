@@ -5,7 +5,7 @@ const AboutMe = () => {
       <div className="role-badge">Full Stack Junior</div>
       <h2>Perfil profesional</h2>
       <p className="lead">
-        Estudiante de Ingeniería que aplica asistentes de IA en el desarrollo full stack. (4.º semestre, Universidad La CUN) y Técnico Laboral en Asistencia y
+        Estudiante de Ingeniería de sistemas que aplica asistentes de IA en el desarrollo full stack. (4.º semestre, Universidad La CUN) y Técnico Laboral en Asistencia y
         Soporte de TI (Universitaria de Colombia).
       </p>
       <p>
