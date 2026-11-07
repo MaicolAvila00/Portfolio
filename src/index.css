@@ -97,7 +97,7 @@ p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 14px; }
 .tech-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, minmax(260px, auto));
+  grid-template-rows: repeat(4, minmax(260px, auto));
   gap: var(--gap);
 }
 
@@ -118,15 +118,15 @@ p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 14px; }
 }
 .tech-grid > .projects {
   grid-column: 1 / span 4;
-  grid-row: 3 / span 2;
+  grid-row: 3;
 }
 .tech-grid > .contact {
   grid-column: 1 / span 2;
-  grid-row: 5 / span 1;
+  grid-row: 4;
 }
 .tech-grid > .footer {
   grid-column: 3 / span 2;
-  grid-row: 5 / span 1;
+  grid-row: 4;
 }
 
 /* --- Bloques genéricos --- */
@@ -299,26 +299,28 @@ p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 14px; }
   letter-spacing: 0.05em;
 }
 
-/* --- Navegación por anclas: compensa el header fijo --- */
-section[id],
-article[id] {
-  scroll-margin-top: 90px;
-}
-
-/* --- Responsive: stack en móvil ---
+/* --- Responsive: stack en móvil --- */
 @media (max-width: 768px) {
   .tech-grid {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
     grid-auto-rows: auto;
   }
-  .tech-grid > article { grid-column: 1; grid-row: auto; }
+  .tech-grid > article,
+  .tech-grid > .about,
+  .tech-grid > .skills,
+  .tech-grid > .projects,
+  .tech-grid > .contact,
+  .tech-grid > .footer {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .tech-grid > .skills {
+    max-height: none;
+    overflow: visible;
+  }
   header { align-items: flex-start; gap: 10px; }
   header h1 { font-size: 2rem; }
-  .about { grid-column: 1; grid-row: auto; }
-  .skills { grid-column: 1; grid-row: auto; }
-  .projects { grid-column: 1; grid-row: auto; }
-  .contact { grid-column: 1; grid-row: auto; }
-  .footer { grid-column: 1; grid-row: auto; }
 }
 
 @media (prefers-reduced-motion: reduce) {

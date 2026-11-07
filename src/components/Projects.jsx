@@ -6,7 +6,7 @@ const projects = [
   },
   {
     title: 'Interfaces graficas Java Swing',
-    tech: ['Java', ' Swing', 'NetBeans'],
+    tech: ['Java', 'Swing', 'NetBeans'],
     link: 'https://github.com/MaicolAvila00/Interfaces---Logica'
   },
   {

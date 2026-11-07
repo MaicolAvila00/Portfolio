@@ -9,20 +9,22 @@ Mi portafolio profesional como desarrollador junior: una página de una sola vis
 
 | Sección | Contenido |
 |---|---|
-| **About Me** | Presentación, objetivos profesionales y habilidades organizadas por categoría: Frontend, Backend, Bases de datos y otras competencias (Git, Scrum, diseño responsive, accesibilidad). |
-| **Projects** | Tarjetas con imagen que enlazan a cada proyecto desplegado. |
-| **Contact** | Botón para copiar el correo, enlaces a LinkedIn y GitHub, y descarga de la hoja de vida en PDF. |
+| **About Me** | Presentación, badge de rol (Full Stack Junior), datos rápidos y stack organizado por categoría en chips. |
+| **Projects** | Tarjetas con miniatura tipográfica (sin imagen) que enlazan a cada repositorio. |
+| **Contact** | Email y teléfono visibles, botón para copiar el correo, enlaces a LinkedIn y GitHub, y descarga del CV en PDF. |
 
-La navegación del encabezado desplaza la página a cada sección mediante anclas (`#about`, `#projects`, `#contact`).
+El sitio es una sola vista que se recorre con scroll: no hay router ni barra de navegación. El encabezado muestra el nombre y el rol.
 
 ## Proyectos destacados
 
+La fuente de verdad es el array `projects` de `src/components/Projects.jsx`.
+
 | Proyecto | Tecnologías | Enlace |
 |---|---|---|
-| Twitter Users Cards Following | React, JavaScript, SWC | [Ver demo](https://twitter-cards-nine.vercel.app/) |
-| Tic Tac Toe | React | [Ver demo](https://game-topaz-gamma.vercel.app/) |
-| Lista de personas con base de datos | React, TypeScript | [Ver demo](https://types-tau.vercel.app/) |
-| Este portafolio | React, Vite | [Ver código](https://github.com/MaicolAvila00/Portofolio_versions) |
+| Sistema de Login Full Stack | React, Vite, Node.js, Express, SQLite | [Ver código](https://github.com/MaicolAvila00/LoginProyect) |
+| Interfaces gráficas Java Swing | Java, Swing, NetBeans | [Ver código](https://github.com/MaicolAvila00/Interfaces---Logica) |
+| Web BikePark | Next.js, CSS modular, React 18, Node, agentes IA | [Ver código](https://github.com/MaicolAvila00/bikepark-website-deploy) |
+| Gestión lista de personas | React, TypeScript, Vite | [Ver código](https://github.com/MaicolAvila00/ListCards) |
 
 ## Tecnologías
 
@@ -35,33 +37,46 @@ La navegación del encabezado desplaza la página a cada sección mediante ancla
 ## Estructura del proyecto
 
 ```
-Portfolio/
-├── public/
-│   └── pdf/                    # Hoja de vida descargable
+Proyect-2/
+├── public/                     # Servido tal cual
+│   ├── pdf/                    # Hoja de vida descargable
+│   ├── ai-catalog.json
+│   ├── llms.txt
+│   └── robots.txt
 ├── src/
-│   ├── assets/img/             # Imágenes de los proyectos
-│   ├── AboutMe.jsx             # Presentación y habilidades
-│   ├── Projects.jsx            # Tarjetas de proyectos
-│   ├── Contact.jsx             # Contacto, redes y descarga del CV
-│   ├── Portfolio.jsx           # Encabezado, navegación y secciones
+│   ├── AboutMe.jsx             # Presentación, badge de rol y datos rápidos
+│   ├── Portfolio.jsx           # Grid bento que compone las secciones
+│   ├── components/
+│   │   ├── Hero.jsx            # Nombre y rol
+│   │   ├── Skills.jsx          # Stack agrupado en chips
+│   │   ├── Projects.jsx        # Tarjetas de proyectos (array `projects`)
+│   │   ├── Contact.jsx         # Email, teléfono, copiar correo, redes y CV
+│   │   └── Footer.jsx
 │   ├── App.jsx
 │   ├── main.jsx                # Punto de entrada
-│   ├── App.css
-│   └── index.css
+│   └── index.css               # Única hoja de estilos
+├── design/                     # Design system y mockups (no se despliega)
+│   ├── system.md
+│   ├── system.html
+│   └── tecnologico/
+│       ├── tecnologico.html
+│       └── design.json
 ├── index.html
 ├── vite.config.js
 ├── eslint.config.js
+├── CHANGELOG.md                # Historial de versiones
+├── agents.md                   # Guía de trabajo para agentes
 └── package.json
 ```
 
 ## Cómo ejecutarlo en local
 
-**Requisitos:** Node.js 18 o superior y npm.
+**Requisitos:** Node.js 26 o superior y npm (ver `.nvmrc` y el campo `engines` de `package.json`).
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/MaicolAvila00/Portfolio.git
-cd Portfolio
+git clone https://github.com/MaicolAvila00/Proyect-.git
+cd Proyect-
 
 # 2. Instalar dependencias
 npm install
@@ -87,9 +102,11 @@ El proyecto se despliega en **Vercel** conectando el repositorio de GitHub. Verc
 
 ## Cómo personalizarlo
 
-- **Proyectos:** edita la lista `projects` en `src/Projects.jsx` (título, imagen y enlace) y guarda la imagen en `src/assets/img/`.
-- **Habilidades y presentación:** modifica los textos y listas en `src/AboutMe.jsx`.
-- **Contacto y CV:** actualiza los enlaces en `src/Contact.jsx` y reemplaza el PDF en `public/pdf/`.
+- **Proyectos:** edita el array `projects` en `src/components/Projects.jsx` (`title`, `tech[]`, `link`). `title` debe ser único porque se usa como `key` y como texto de la miniatura.
+- **Habilidades y presentación:** modifica los grupos y textos en `src/components/Skills.jsx` y `src/AboutMe.jsx`.
+- **Contacto:** actualiza email, teléfono y enlaces en `src/components/Contact.jsx`.
+- **CV:** reemplaza `public/pdf/Curriculum Maicol Avila.pdf`; si cambia el nombre, actualiza el `href` del enlace de descarga en `Contact.jsx`.
+- **Estilos:** el diseño vive en `src/index.css`; los tokens están en `:root` y se documentan en `design/system.md`.
 
 
 ## Autor
@@ -97,5 +114,5 @@ El proyecto se despliega en **Vercel** conectando el repositorio de GitHub. Verc
 **Maicol Ávila**, Desarrollador Junior Full Stack
 
 - GitHub: [MaicolAvila00](https://github.com/MaicolAvila00)
-- LinkedIn: [maicol-avila-032503210](https://linkedin.com/in/maicol-avila-032503210)
+- LinkedIn: [maicol-ávila-developer-junior](https://www.linkedin.com/in/maicol%C3%A1vila-developer-junior/)
 - Portafolio: [portofoliov1-maicol-avilas-projects.vercel.app](https://portofoliov1-maicol-avilas-projects.vercel.app)

@@ -1,0 +1,14 @@
+{
+  "title": "Tecnológico — Portfolio Maicol Avila",
+  "brief": "Dirección visual del portafolio: layout bento con tarjetas de distinto tamaño, fondo muy oscuro, acento cian neón y tipografía jerárquica (sans para lectura, mono para datos técnicos).",
+  "feature": null,
+  "artboards": [
+    {
+      "file": "tecnologico.html",
+      "title": "Tecnológico",
+      "tradeoff": "Muy visual y con alta densidad de información; depende de contraste alto y de un único acento para no saturar.",
+      "width": 1200,
+      "height": 950
+    }
+  ]
+}
